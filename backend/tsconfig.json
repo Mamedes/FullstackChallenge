@@ -17,6 +17,8 @@
       "emitDecoratorMetadata": true,
       "skipLibCheck": true,
       "forceConsistentCasingInFileNames": true,
-      "resolveJsonModule": true
-    }
+      "resolveJsonModule": true,
+      "moduleResolution": "node",
+    },
+    "include": ["src", "decs.d.ts"]
   }

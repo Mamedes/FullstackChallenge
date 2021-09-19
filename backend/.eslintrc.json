@@ -1,59 +1,71 @@
 {
     "env": {
-      "es6": true,
-      "browser": true
+        "es2021": true,
+        "node": true,
+        "jest": true
     },
-
     "extends": [
+        "airbnb-base",
+        "plugin:@typescript-eslint/recommended",
+        "prettier",
+        "plugin:prettier/recommended"
 
-      "airbnb",
-      "plugin:@typescript-eslint/recommended",
-      "prettier/@typescript-eslint",
-      "plugin:prettier/recommended"
     ],
-    "globals": {
-      "Atomics": "readonly",
-      "SharedArrayBuffer": "readonly"
-    },
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-      "ecmaFeatures": {
-        "jsx": true
-      },
-      "ecmaVersion": 12,
-      "sourceType": "module"
+        "ecmaVersion": 12,
+        "sourceType": "module"
     },
     "plugins": [
-
-      "@typescript-eslint",
-      "prettier"
+        "@typescript-eslint",
+        "eslint-plugin-import-helpers",
+        "prettier"
     ],
     "rules": {
-      "camelcase": "off",
-      "prettier/prettier": "error",
-      "no-unused-expressions": "off",
-      "import/prefer-default-export": "off",
-      "import/no-duplicates": "off",
-      "@typescript-eslint/camelcase": "off",
-      "@typescript-eslint/explicit-function-return-type": [
+        "camelcase": "off",
+        "import/no-unresolved": "error",
+        "@typescript-eslint/naming-convention": [
         "error",
         {
-          "allowExpressions": true
+            "selector": "interface",
+            "format": ["PascalCase"],
+            "custom": {
+            "regex": "^I[A-Z]",
+            "match": true
+            }
         }
-      ],
-      "import/extensions": [
+        ],
+        "class-methods-use-this": "off",
+        "import/prefer-default-export": "off",
+        "no-shadow": "off",
+        "no-console": "off",
+        "no-useless-constructor": "off",
+        "no-empty-function": "off",
+        "lines-between-class-members": "off",
+        "import/extensions": [
         "error",
         "ignorePackages",
         {
-          "ts": "never"
+            "ts": "never"
         }
-      ]
+        ],
+        "import-helpers/order-imports": [
+        "warn",
+        {
+            "newlinesBetween": "always",
+            "groups": ["module", "/^@/", ["parent", "sibling", "index"]],
+            "alphabetize": { "order": "asc", "ignoreCase": true }
+        }
+        ],
+        "import/no-extraneous-dependencies": [
+        "error",
+        { "devDependencies": ["**/*.spec.js"] }
+        ],
+        "prettier/prettier": "error"
     },
     "settings": {
         "import/resolver": {
-            "node": {
-                "extensions": [".js", ".jsx", ".ts", ".tsx"]
-            }
+          "typescript": {}
         }
-    }
+      }
 }

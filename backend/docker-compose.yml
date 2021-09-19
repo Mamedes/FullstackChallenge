@@ -10,7 +10,7 @@ services:
     environment:
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=docker
-      - POSTGRES_DB=openfood
+      - POSTGRES_DB=database_openfood
     volumes:
       - pgdata:/data/postgres
 
