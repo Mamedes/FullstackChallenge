@@ -1,5 +1,5 @@
 import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm';
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidV4 } from 'uuid';
 
 @Entity('products')
 class Product {
@@ -16,7 +16,7 @@ class Product {
     status: string;
 
     @Column()
-    imported_t: string;
+    imported_t: Date;
 
     @Column()
     url: string;
@@ -44,9 +44,10 @@ class Product {
 
     constructor() {
         if (!this.id) {
-            this.id = uuidv4();
+            this.id = uuidV4();
+            this.created_at = new Date();
         }
     }
 }
 
-export default Product ;
+export { Product };

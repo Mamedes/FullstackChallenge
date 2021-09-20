@@ -2,7 +2,7 @@ interface ICreateProductDTO {
     code: string;
     barcode: string;
     status: string;
-    imported_t: string;
+    imported_t: Date;
     url: string;
     product_name: string;
     quantity: string;

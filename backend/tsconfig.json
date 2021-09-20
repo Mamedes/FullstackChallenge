@@ -6,11 +6,12 @@
       "baseUrl": "./src",
       "outDir": "./dist",
       "paths": {
-        "@modules/*": ["modules/*"],
+        "@migrations/*": ["shared/infra/typeorm/migrations/*"],
         "@config/*": ["config/*"],
+        "@modules/*": ["modules/*"],
         "@shared/*": ["shared/*"],
-        "@errors/*": ["errors/*"],
-        "@utils/*": ["utils/*"]
+        "@utils/*": ["utils/*"],
+        "swaggerFile": ["swagger.json"]
       },
       "esModuleInterop": true,
       "experimentalDecorators": true,

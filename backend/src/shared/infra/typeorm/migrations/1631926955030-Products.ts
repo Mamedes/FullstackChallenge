@@ -10,8 +10,6 @@ export class Products1631926955030 implements MigrationInterface {
                         name: 'id',
                         type: 'uuid',
                         isPrimary: true,
-                        generationStrategy: 'uuid',
-                        default: 'uuid_generate_v4()',
                     },
                     {
                         name: 'code',
@@ -22,13 +20,14 @@ export class Products1631926955030 implements MigrationInterface {
                         type: 'varchar',
                     },
                     {
-                        name: 'satus',
+                        name: 'status',
                         type: 'varchar',
                     },
 
                     {
                         name: 'imported_t',
-                        type: 'varchar',
+                        type: 'timestamp',
+                        default: 'now()',
                     },
                     {
                         name: 'url',
